@@ -3,7 +3,7 @@ import styles from './ContactFooter.module.css';
 
 export default function ContactFooter() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="kontakt">
       <div className={styles.contactSection}>
         <div className={`container ${styles.container}`}>
           <div className={styles.formWrapper}>
@@ -11,9 +11,13 @@ export default function ContactFooter() {
               <h2>In 60 Sekunden zum Angebot</h2>
               <p>Beschreiben Sie kurz Ihr Anliegen. Wir melden uns umgehend bei Ihnen.</p>
               
-              <form className={styles.form}>
+              <form action="https://formsubmit.co/bballrounddienst@gmail.com" method="POST" className={styles.form}>
+                {/* FormSubmit configurations */}
+                <input type="hidden" name="_subject" value="Neue Anfrage über B&B Website!" />
+                <input type="hidden" name="_template" value="table" />
+                
                 <div className={styles.formGroup}>
-                  <input type="text" placeholder="Ihr Name" required className={styles.input} />
+                  <input type="text" name="Name" placeholder="Ihr Name" required className={styles.input} />
                 </div>
                 <div className={styles.formGroup}>
                   <input type="tel" placeholder="Telefonnummer" required className={styles.input} />

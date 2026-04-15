@@ -21,7 +21,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="ueber-uns">
       <div className={`container ${styles.container}`}>
         <div className={styles.textContent}>
           <h2>Warum B&B Allroundservice?</h2>

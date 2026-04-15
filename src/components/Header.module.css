@@ -1,0 +1,94 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header.scrolled {
+    background-color: rgba(17, 34, 51, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  transition: color 0.3s ease;
+}
+
+.header.scrolled .logo {
+  color: var(--color-anthracite);
+}
+
+@media (prefers-color-scheme: dark) {
+  .header.scrolled .logo {
+    color: var(--color-white);
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .nav a {
+  color: var(--color-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  .header.scrolled .nav a {
+    color: var(--color-white);
+  }
+}
+
+.nav a:hover {
+  color: var(--color-gold);
+}
+
+.ctaButton {
+  background-color: var(--color-gold);
+  color: var(--color-white) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600 !important;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 168, 232, 0.3);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* simple mobile hidden for now, can implement mobile menu if requested */
+  }
+}

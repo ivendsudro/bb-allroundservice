@@ -1,9 +1,21 @@
+'use client';
 import React from 'react';
 import styles from './Hero.module.css';
 
 export default function Hero() {
+  const smoothScroll = (e: React.MouseEvent<HTMLButtonElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="start">
       <div className={styles.overlay}></div>
       <div className={`container ${styles.content}`}>
         <h1 className="animate-fade-in">
@@ -14,7 +26,7 @@ export default function Hero() {
           Wir sind Ihr verlässlicher Partner in <strong>Lauf an der Pegnitz, Nürnberg</strong> und dem gesamten Nürnberger Land.
         </p>
         <div className={`animate-fade-in ${styles.actions}`} style={{ animationDelay: '0.4s' }}>
-          <button className="btn btn-primary">Jetzt Angebot anfordern</button>
+          <button className="btn btn-primary" onClick={(e) => smoothScroll(e, 'kontakt')}>Jetzt Angebot anfordern</button>
           <div className={styles.contactInfo}>
             <span className={styles.phoneIcon}>📞</span>
             <a href="tel:+4917624702350" className={styles.phoneNumber}>0176 2470 2350</a>

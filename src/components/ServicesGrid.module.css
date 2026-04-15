@@ -1,10 +1,5 @@
 .section {
-  background-color: var(--color-gray-100);
-  position: relative;
-}
-
-.container {
-  /* standard container */
+  background: var(--color-bg);
 }
 
 .header {
@@ -12,185 +7,185 @@
   margin-bottom: 4rem;
 }
 
-.header h2 {
-  font-size: 2.5rem;
-  color: var(--color-anthracite);
-}
-
-.header p {
-  font-size: 1.125rem;
-  color: var(--color-text);
-  max-width: 600px;
+.header .section-subtitle {
   margin: 0 auto;
-  opacity: 0.8;
 }
 
+/* Cards Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
 }
 
 .card {
-  padding: 2.5rem 2rem;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-  background: var(--color-white); /* override clear glass if we want solid cards on gray bg, or use true glass if on dark bg */
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
   cursor: pointer;
-}
-
-/* Specific styling for dark mode or to emphasize glassmorphism */
-@media (prefers-color-scheme: dark) {
-  .header h2 {
-    color: var(--color-white);
-  }
-  .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
+  transition: all 0.35s ease;
+  border: 1px solid var(--color-border-light);
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
-@media (prefers-color-scheme: dark) {
-  .card:hover {
-     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
+.cardImage {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
 }
 
-.icon {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  background: var(--color-gray-100);
-  height: 60px;
-  width: 60px;
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  .icon {
-    background: var(--color-gray-200);
-  }
-}
-
-.card:hover .icon {
-  background: var(--color-gold);
-  color: var(--color-white);
-}
-
-.card h3 {
-  font-size: 1.25rem;
-  color: var(--color-anthracite);
-  margin-bottom: 0.75rem;
-  font-family: var(--font-sans); /* using sans instead of serif for card titles feels more modern */
-  font-weight: 600;
-}
-
-@media (prefers-color-scheme: dark) {
-  .card h3 {
-    color: var(--color-white);
-  }
-}
-
-.card p {
-  color: var(--color-text);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 0;
-  flex-grow: 1;
-}
-
-.moreLink {
-  margin-top: 1.5rem;
-  color: var(--color-gold);
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
-}
-
-.card:hover .moreLink {
-  transform: translateX(5px);
-}
-
-/* Modal Popup Styles */
-.modalBackdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(17, 34, 51, 0.8);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
   padding: 1rem;
 }
 
-.modalContent {
-  background-color: var(--color-white);
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
-  max-width: 500px;
+.cardIcon {
+  font-size: 1.75rem;
+  background: var(--color-white);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardBody h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.cardBody p {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.cardLink {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: gap 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.card:hover .cardLink {
+  color: var(--color-primary-dark);
+}
+
+/* Modal */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(15, 25, 35, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  max-width: 480px;
   width: 100%;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  animation: modalFadeIn 0.3s ease-out forwards;
+  animation: scaleIn 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  .modalContent {
-    background-color: var(--color-gray-100);
-  }
-}
-
-.closeBtn {
+.close {
   position: absolute;
-  top: 1rem;
+  top: 1.25rem;
   right: 1.5rem;
-  background: none;
+  background: var(--color-bg);
   border: none;
-  font-size: 2rem;
-  color: var(--color-anthracite);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   cursor: pointer;
-  line-height: 1;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.close:hover {
+  background: var(--color-border);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .modalIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
 }
 
-.modalContent h2 {
-  color: var(--color-anthracite);
-  margin-bottom: 1rem;
-  font-size: 1.75rem;
+.modalHeader h2 {
+  font-size: 1.5rem;
 }
 
-.modalDesc {
-  color: var(--color-text);
+.modalText {
+  color: var(--color-text-light);
   line-height: 1.8;
-  font-size: 1rem;
   margin-bottom: 2rem;
 }
 
-.modalAction {
-  width: 100%;
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@keyframes modalFadeIn {
-  from { opacity: 0; transform: translateY(20px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }

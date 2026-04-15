@@ -1,17 +1,18 @@
 .main {
-  background-color: var(--color-background);
+  background-color: var(--color-bg);
   min-height: 100vh;
-  padding-top: 2rem;
+  padding-top: 6rem;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 3rem 2.5rem;
   background: var(--color-white);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
   margin-bottom: 4rem;
+  border: 1px solid var(--color-border-light);
 }
 
 .backLink {
@@ -19,50 +20,46 @@
 }
 
 .backLink a {
-  color: var(--color-mint);
+  color: var(--color-primary);
   font-weight: 600;
+  font-size: 0.9375rem;
   transition: color 0.3s;
 }
 
 .backLink a:hover {
-  color: var(--color-gold);
+  color: var(--color-primary-dark);
 }
 
 .title {
-  font-size: 2.5rem;
-  color: var(--color-anthracite);
+  font-size: 2.25rem;
+  color: var(--color-text);
   margin-bottom: 2rem;
-  border-bottom: 2px solid var(--color-gray-200);
   padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border-light);
 }
 
 .content section {
   margin-bottom: 2.5rem;
-  padding: 0;
 }
 
 .content h2 {
-  font-size: 1.5rem;
-  color: var(--color-anthracite);
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
 }
 
 .content p {
-  color: var(--color-text);
+  color: var(--color-text-light);
   line-height: 1.8;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .content a {
-  color: var(--color-gold);
-  text-decoration: underline;
+  color: var(--color-primary);
+  font-weight: 500;
 }
 
-@media (prefers-color-scheme: dark) {
-  .container {
-    background: rgba(255, 255, 255, 0.05);
-  }
-  .title, .content h2 {
-    color: var(--color-white);
-  }
+.content a:hover {
+  text-decoration: underline;
 }

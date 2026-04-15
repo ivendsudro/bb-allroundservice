@@ -4,39 +4,46 @@ import styles from './Header.module.css';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const smoothScroll = (e: React.MouseEvent<HTMLElement, MouseEvent>, id: string) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
+  const scroll = (id: string) => {
+    setMobileOpen(false);
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
   };
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={`container ${styles.container}`}>
-        <div className={styles.logo} onClick={(e) => smoothScroll(e, 'start')} style={{cursor: 'pointer'}}>
-          B&B Allroundservice
+      <div className={`container ${styles.inner}`}>
+        <div className={styles.brand} onClick={() => scroll('start')}>
+          <div className={styles.logo}>
+            <span className={styles.logoIcon}>✦</span>
+            <div>
+              <span className={styles.logoName}>B&B Allroundservice</span>
+              <span className={styles.logoSub}>Sauberkeit. Pflege. Service.</span>
+            </div>
+          </div>
         </div>
-        <nav className={styles.nav}>
-          <a href="#start" onClick={(e) => smoothScroll(e, 'start')}>Startseite</a>
-          <a href="#leistungen" onClick={(e) => smoothScroll(e, 'leistungen')}>Dienstleistungen</a>
-          <a href="#galerie" onClick={(e) => smoothScroll(e, 'galerie')}>Unsere Arbeit</a>
-          <a href="#ueber-uns" onClick={(e) => smoothScroll(e, 'ueber-uns')}>Über uns</a>
-          <a href="#kontakt" onClick={(e) => smoothScroll(e, 'kontakt')} className={styles.ctaButton}>Kontakt</a>
+
+        <nav className={`${styles.nav} ${mobileOpen ? styles.navOpen : ''}`}>
+          <a onClick={() => scroll('start')}>Startseite</a>
+          <a onClick={() => scroll('leistungen')}>Leistungen</a>
+          <a onClick={() => scroll('galerie')}>Unsere Arbeit</a>
+          <a onClick={() => scroll('ueber-uns')}>Über uns</a>
+          <a onClick={() => scroll('kontakt')} className={`btn btn-primary ${styles.navCta}`}>
+            Kontakt aufnehmen
+          </a>
         </nav>
+
+        <button className={styles.burger} onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menü">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
   );

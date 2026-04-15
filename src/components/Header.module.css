@@ -4,91 +4,159 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1.5rem 0;
-  transition: all 0.3s ease;
-  background-color: transparent;
+  padding: 1rem 0;
+  transition: all 0.35s ease;
 }
 
 .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  padding: 1rem 0;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.06);
+  padding: 0.75rem 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  .header.scrolled {
-    background-color: rgba(17, 34, 51, 0.95);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-}
-
-.container {
+.inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.brand {
+  cursor: pointer;
+}
+
 .logo {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  transition: color 0.3s;
+}
+
+.header:not(.scrolled) .logoIcon {
   color: var(--color-white);
-  transition: color 0.3s ease;
 }
 
-.header.scrolled .logo {
-  color: var(--color-anthracite);
+.logoName {
+  display: block;
+  font-weight: 800;
+  font-size: 1.125rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
 }
 
-@media (prefers-color-scheme: dark) {
-  .header.scrolled .logo {
-    color: var(--color-white);
-  }
+.header:not(.scrolled) .logoName {
+  color: var(--color-white);
 }
 
+.logoSub {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header:not(.scrolled) .logoSub {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Navigation */
 .nav {
   display: flex;
-  gap: 2rem;
   align-items: center;
+  gap: 2rem;
 }
 
 .nav a {
-  color: var(--color-white);
+  font-size: 0.9375rem;
   font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;
 }
 
-.header.scrolled .nav a {
-  color: var(--color-text);
-}
-
-@media (prefers-color-scheme: dark) {
-  .header.scrolled .nav a {
-    color: var(--color-white);
-  }
+.header:not(.scrolled) .nav a {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .nav a:hover {
-  color: var(--color-gold);
+  color: var(--color-primary);
 }
 
-.ctaButton {
-  background-color: var(--color-gold);
-  color: var(--color-white) !important;
-  padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 600 !important;
+.header:not(.scrolled) .nav a:hover {
+  color: var(--color-white);
 }
 
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 168, 232, 0.3);
+.navCta {
+  padding: 0.625rem 1.5rem !important;
+  font-size: 0.875rem !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.header:not(.scrolled) .navCta {
+  background: var(--color-white) !important;
+  color: var(--color-primary) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15) !important;
+}
+
+/* Hamburger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.burger span {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.header:not(.scrolled) .burger span {
+  background-color: var(--color-white);
 }
 
 @media (max-width: 768px) {
+  .burger {
+    display: flex;
+    z-index: 1001;
+  }
+
   .nav {
-    display: none; /* simple mobile hidden for now, can implement mobile menu if requested */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6rem 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 0.35s ease;
+  }
+
+  .nav.navOpen {
+    right: 0;
+  }
+
+  .nav a {
+    color: var(--color-text) !important;
+    font-size: 1.125rem;
   }
 }

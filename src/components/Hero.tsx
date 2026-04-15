@@ -17,7 +17,7 @@ export default function Hero() {
           <button className="btn btn-primary">Jetzt Angebot anfordern</button>
           <div className={styles.contactInfo}>
             <span className={styles.phoneIcon}>📞</span>
-            <a href="tel:+49123456789" className={styles.phoneNumber}>0123 / 456 789 0</a>
+            <a href="tel:+4917624702350" className={styles.phoneNumber}>0176 2470 2350</a>
           </div>
         </div>
       </div>

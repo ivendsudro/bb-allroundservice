@@ -42,19 +42,27 @@ export default function ContactFooter() {
              </p>
              
              <div className={styles.contactLinks}>
-                <a href="tel:+49123456789" className={styles.contactCard}>
+                <a href="tel:+4917624702350" className={styles.contactCard}>
                   <span className={styles.icon}>📞</span>
                   <div>
                     <span className={styles.label}>Rufen Sie uns an</span>
-                    <span className={styles.value}>0123 / 456 789 0</span>
+                    <span className={styles.value}>0176 2470 2350</span>
                   </div>
                 </a>
                 
-                <a href="https://wa.me/49123456789" target="_blank" rel="noopener noreferrer" className={styles.contactCard}>
+                <a href="https://wa.me/4917624702350" target="_blank" rel="noopener noreferrer" className={styles.contactCard}>
                   <span className={styles.icon}>💬</span>
                   <div>
                     <span className={styles.label}>WhatsApp Chat</span>
                     <span className={styles.value}>Direkt schreiben</span>
+                  </div>
+                </a>
+
+                <a href="mailto:bballrounddienst@gmail.com" className={styles.contactCard}>
+                  <span className={styles.icon}>✉️</span>
+                  <div>
+                    <span className={styles.label}>Email senden</span>
+                    <span className={styles.value}>bballrounddienst@gmail.com</span>
                   </div>
                 </a>
              </div>
@@ -73,7 +81,7 @@ export default function ContactFooter() {
               </p>
             </div>
             <div className={styles.legalLinks}>
-              <a href="#">Impressum</a>
+              <a href="/impressum">Impressum</a>
               <a href="#">Datenschutz</a>
             </div>
           </div>

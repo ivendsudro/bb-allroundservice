@@ -2,37 +2,36 @@ import React from 'react';
 import styles from './Gallery.module.css';
 
 export default function Gallery() {
-  const projects = [
-    { title: 'Gebäudereinigung', desc: 'Professionelle Reinigung für Ihr Zuhause oder Bürogebäude.', placeholder: 'Vorher / Nachher Foto' },
-    { title: 'Reparaturen', desc: 'Zuverlässige Reparaturdienste für Ihr Zuhause.', placeholder: 'Vorher / Nachher Foto' },
-    { title: 'Gepflegte Gärten', desc: 'Gartenpflege vom Profi – das ganze Jahr über.', placeholder: 'Vorher / Nachher Foto' },
-    { title: 'Entrümpelung', desc: 'Besenreine Räumung – schnell und diskret.', placeholder: 'Vorher / Nachher Foto' },
+  const items = [
+    { label: 'Gebäudereinigung', area: 'Bürogebäude · Lauf a.d. Pegnitz' },
+    { label: 'Gartenarbeit', area: 'Privatgarten · Simmelsdorf' },
+    { label: 'Entrümpelung', area: 'Kellerräumung · Nürnberg' },
+    { label: 'Fassadenreinigung', area: 'Mehrfamilienhaus · Röthenbach' },
   ];
 
   return (
     <section className={styles.section} id="galerie">
       <div className="container">
-        <div className={styles.header}>
-          <div className="section-badge">📷 Unsere Projekte</div>
-          <h2 className="section-title">Einblick in unsere Arbeit</h2>
-          <p className="section-subtitle">
-            Hier finden Sie eine Auswahl unserer erfolgreich abgeschlossenen Projekte.
-          </p>
+        <div className={`${styles.header} reveal`}>
+          <span className="badge badge-blue">Projekte</span>
+          <h2>Einblick in<br /><em>unsere Arbeit.</em></h2>
         </div>
 
         <div className={styles.grid}>
-          {projects.map((p, i) => (
-            <div key={i} className={styles.card}>
-              <div className={styles.imagePlaceholder}>
-                <div className={styles.placeholderInner}>
-                  <span className={styles.placeholderIcon}>📸</span>
-                  <span className={styles.placeholderText}>{p.placeholder}</span>
+          {items.map((item, i) => (
+            <div key={i} className={`${styles.card} reveal reveal-delay-${i + 1}`}>
+              <div className={styles.placeholder}>
+                <div className={styles.phInner}>
+                  <span className={styles.phIcon}>📸</span>
+                  <span className={styles.phText}>Ihr Foto hier</span>
                 </div>
               </div>
-              <div className={styles.cardBody}>
-                <h3>{p.title}</h3>
-                <p>{p.desc}</p>
-                <span className={styles.arrow}>→</span>
+              <div className={styles.meta}>
+                <div>
+                  <h3>{item.label}</h3>
+                  <span className={styles.area}>{item.area}</span>
+                </div>
+                <span className={styles.arrow}>↗</span>
               </div>
             </div>
           ))}

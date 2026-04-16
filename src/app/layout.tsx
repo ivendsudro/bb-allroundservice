@@ -1,16 +1,23 @@
-import { Inter, Playfair_Display } from "next/font/google";
+import { Syne, Space_Grotesk, Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["700", "800"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -36,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className={`${inter.variable} ${playfair.variable}`}>
+      <body className={`${syne.variable} ${spaceGrotesk.variable} ${inter.variable}`}>
         {children}
       </body>
     </html>

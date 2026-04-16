@@ -1,191 +1,175 @@
 .section {
-  background: var(--color-bg);
+  background: var(--c-light);
 }
 
 .header {
-  text-align: center;
   margin-bottom: 4rem;
 }
 
-.header .section-subtitle {
-  margin: 0 auto;
+.header h2 {
+  margin-top: 1rem;
 }
 
-/* Cards Grid */
+.header em {
+  font-style: italic;
+  color: var(--c-blue);
+}
+
+/* Grid – asymmetric 2-column with offset */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
+.grid > *:nth-child(even) {
+  margin-top: 3rem;
+}
+
+/* Card */
 .card {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
   cursor: pointer;
-  transition: all 0.35s ease;
-  border: 1px solid var(--color-border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--c-white);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
-.cardImage {
+.imgWrap {
   position: relative;
-  height: 200px;
+  height: 280px;
   overflow: hidden;
 }
 
-.cardImage img {
+.imgWrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.7s var(--ease-out);
 }
 
-.card:hover .cardImage img {
-  transform: scale(1.05);
+.card:hover .imgWrap img {
+  transform: scale(1.08);
 }
 
-.cardOverlay {
+.imgOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  background: linear-gradient(to top, rgba(10, 10, 11, 0.4), transparent 60%);
   display: flex;
-  align-items: flex-end;
-  padding: 1rem;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1.25rem;
 }
 
-.cardIcon {
-  font-size: 1.75rem;
-  background: var(--color-white);
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-md);
-}
-
-.cardBody {
-  padding: 1.5rem;
-}
-
-.cardBody h3 {
-  font-size: 1.15rem;
+.tag {
+  font-family: var(--f-display);
+  font-size: 0.875rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
+  color: var(--c-white);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 0.375rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.cardBody p {
-  font-size: 0.9375rem;
-  color: var(--color-text-light);
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.cardLink {
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: gap 0.3s ease;
-  display: inline-flex;
+.cardContent {
+  padding: 1.5rem 1.75rem;
+  display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
-.card:hover .cardLink {
-  color: var(--color-primary-dark);
+.cardContent h3 {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-black);
+  flex-shrink: 0;
+}
+
+.cardSub {
+  font-family: var(--f-small);
+  font-size: 0.8125rem;
+  color: var(--c-silver);
+  flex-grow: 1;
+}
+
+.arrow {
+  font-size: 1.25rem;
+  color: var(--c-silver);
+  transition: all 0.4s var(--ease-out);
+  flex-shrink: 0;
+}
+
+.card:hover .arrow {
+  color: var(--c-blue);
+  transform: translateX(4px);
 }
 
 /* Modal */
 .backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background: rgba(15, 25, 35, 0.6);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(10, 10, 11, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
   padding: 1.5rem;
-  animation: fadeIn 0.2s ease;
+  animation: fadeIn 0.25s ease;
 }
 
 .modal {
-  background: var(--color-white);
-  border-radius: var(--radius-xl);
-  padding: 2.5rem;
+  background: var(--c-white);
+  border-radius: 20px;
+  padding: 3rem;
   max-width: 480px;
   width: 100%;
   position: relative;
-  animation: scaleIn 0.3s ease;
+  animation: modalIn 0.35s var(--ease-spring);
 }
 
 .close {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.5rem;
-  background: var(--color-bg);
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  background: var(--c-light); border: none;
+  width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 0.875rem;
+  display: flex; align-items: center; justify-content: center;
   transition: background 0.3s;
 }
 
-.close:hover {
-  background: var(--color-border);
+.close:hover { background: #e5e5e5; }
+
+.modalTag {
+  font-family: var(--f-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--c-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
-.modalHeader {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
+.modal h2 {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.75rem;
 }
 
-.modalIcon {
-  font-size: 2.5rem;
-}
-
-.modalHeader h2 {
-  font-size: 1.5rem;
-}
-
-.modalText {
-  color: var(--color-text-light);
-  line-height: 1.8;
+.modal p {
   margin-bottom: 2rem;
+  line-height: 1.8;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .grid > *:nth-child(even) { margin-top: 0; }
 }
 
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.92) translateY(20px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }

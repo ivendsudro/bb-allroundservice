@@ -70,11 +70,11 @@
 .cta {
   padding: 0.625rem 1.5rem !important;
   font-size: 0.8125rem !important;
+  color: var(--c-white) !important;
 }
 
 .header:not(.scrolled) .cta {
   background: rgba(255,255,255,0.15) !important;
-  color: var(--c-white) !important;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.25) !important;
   box-shadow: none !important;

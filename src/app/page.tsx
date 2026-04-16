@@ -5,6 +5,7 @@ import Marquee from "@/components/Marquee";
 import ServicesGrid from "@/components/ServicesGrid";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
+import Reviews from "@/components/Reviews";
 import ContactFooter from "@/components/ContactFooter";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <ServicesGrid />
         <Gallery />
         <WhyUs />
+        <Reviews />
         <ContactFooter />
       </main>
     </>

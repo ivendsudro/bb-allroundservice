@@ -11,9 +11,11 @@ export default function Hero() {
   return (
     <section className={styles.hero} id="hero">
       <div className={styles.bg}>
+        {/* HIER DAS HERO-BILD ÄNDERN: Einfach den Link bei 'src' austauschen. 
+            Empfehlung: Bilder im Frutiger Aero / Sauberkeits-Stil verwenden */}
         <img
-          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80"
-          alt="Professionelle Gebäudereinigung"
+          src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=80"
+          alt="Strahlende Sauberkeit und Gebäudereinigung"
         />
         <div className={styles.overlay} />
       </div>

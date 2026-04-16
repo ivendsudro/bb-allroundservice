@@ -34,8 +34,8 @@ export default function PainPoints() {
     <section className={styles.section}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.stat}>
-          <span className={styles.number}><AnimatedNumber target={500} suffix="+" /></span>
-          <span className={styles.label}>Zufriedene Kunden</span>
+          <span className={styles.number}><AnimatedNumber target={100} suffix="%" /></span>
+          <span className={styles.label}>Zuverlässigkeit</span>
         </div>
         <div className={styles.divider} />
         <div className={styles.stat}>

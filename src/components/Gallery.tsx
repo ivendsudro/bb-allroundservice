@@ -28,8 +28,8 @@ export default function Gallery() {
     { 
       label: 'Entrümpelung', 
       area: 'Kellerräumung · Nürnberg',
-      imageBefore: '/entruempelung-vorher.jpg', 
-      imageAfter: '/entruempelung-nachher.jpg', 
+      imageBefore: '/entruempelung-nachher.jpg', 
+      imageAfter: '/entruempelung-vorher.jpg', 
       comment: 'Einen 60qm großen Keller innerhalb von 6 Stunden besenrein übergeben. Fairer Festpreis!'
     },
     { 

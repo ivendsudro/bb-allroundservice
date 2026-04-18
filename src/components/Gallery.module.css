@@ -31,7 +31,7 @@
 }
 
 .imageWrap {
-  height: 260px;
+  height: 480px; /* Erhöht von 260px für bessere Sichtbarkeit */
   overflow: hidden;
   background: var(--c-light);
 }

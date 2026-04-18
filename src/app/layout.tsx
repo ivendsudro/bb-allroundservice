@@ -21,8 +21,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "B&B Allroundservice | Gebäudereinigung & Reparatur Lauf an der Pegnitz",
-  description: "Ihr zuverlässiger Partner für Gebäudereinigung, Reparatur, Hausmeisterservice und Gartenpflege in Lauf an der Pegnitz, Nürnberg, Röthenbach und Umgebung.",
+  title: "Gebäudereinigung Lauf an der Pegnitz | B&B Allroundservice",
+  description: "Professionelle Gebäudereinigung, Gartenpflege & Reparaturen in Lauf a.d. Pegnitz. Familiengeführt, fair & zuverlässig. Jetzt kostenlos anfragen – 0176 2470 2350.",
   keywords: [
     "Gebäudereinigung", "Lauf an der Pegnitz", "Nürnberg", "Reparatur",
     "Hausmeisterservice", "Nürnberger Land", "Röthenbach", "Schnaittach",
@@ -43,6 +43,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "B&B Allroundservice",
+              "description": "Gebäudereinigung, Gartenpflege, Reparaturen und Winterdienst im Nürnberger Land",
+              "telephone": "+4917624702350",
+              "email": "bballrounddienst@gmail.com",
+              "url": "https://bballroundservice.vercel.app",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Simmelsdorf",
+                "addressRegion": "Bayern",
+                "addressCountry": "DE"
+              },
+              "areaServed": ["Lauf an der Pegnitz", "Nürnberg", "Röthenbach", "Schnaittach", "Hersbruck", "Schwaig", "Simmelsdorf"],
+              "priceRange": "€€"
+            })
+          }}
+        />
+      </head>
       <body className={`${syne.variable} ${spaceGrotesk.variable} ${inter.variable}`}>
         {children}
       </body>

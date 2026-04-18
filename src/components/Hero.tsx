@@ -15,7 +15,7 @@ export default function Hero() {
             Empfehlung: Bilder im Frutiger Aero / Sauberkeits-Stil verwenden */}
         <img
           src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=80"
-          alt="Strahlende Sauberkeit und Gebäudereinigung"
+          alt="Professionelle Gebäudereinigung in Lauf an der Pegnitz"
         />
         <div className={styles.overlay} />
       </div>
@@ -32,8 +32,8 @@ export default function Hero() {
         </h1>
 
         <p className={styles.sub}>
-          Gebäudereinigung · Reparaturen · Gartenpflege · Winterdienst<br />
-          <strong>Ihr Allround-Partner im Nürnberger Land.</strong>
+          Professionelle Gebäudereinigung & Hausmeisterservice in Lauf a.d. Pegnitz.<br />
+          <strong>Ihr Partner für Gartenpflege und Reparaturen im Nürnberger Land.</strong>
         </p>
 
         <div className={styles.actions}>

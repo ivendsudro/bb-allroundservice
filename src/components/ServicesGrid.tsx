@@ -7,28 +7,32 @@ const services = [
     title: 'Gebäude\u00ADreinigung',
     tag: '01',
     image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80',
-    short: 'Büro · Treppe · Privathaushalt',
+    alt: 'Gebäudereinigung Treppenhaus und Büro im Nürnberger Land',
+    short: 'Büro · Treppe · Privathaushalt. Wir reinigen Treppenhäuser, Büroräume und Privathaushalte – gründlich, zuverlässig und zu fairen Festpreisen.',
     details: 'Wir übernehmen die regelmäßige Unterhaltsreinigung, Fensterreinigung und Grundreinigung Ihrer Immobilie. Mit professionellem Equipment und geschultem Auge sorgen wir dafür, dass Ihr Objekt immer in bestem Glanz erstrahlt.'
   },
   {
     title: 'Reparaturen',
     tag: '02',
     image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80',
-    short: 'Handwerk · Montage · Instandhaltung',
+    alt: 'Handwerker bei Reparatur und Instandhaltung',
+    short: 'Handwerk · Montage · Instandhaltung. Von der losen Schraube bis zur kompletten Instandhaltung – wir erledigen Handwerksarbeiten aller Art schnell und sauber.',
     details: 'Ein klemmendes Schloss? Eine kaputte Fußleiste? Löcher in der Wand? Wir machen das. Unser handwerkliches Geschick spart Ihnen teure Spezialfirmen für Kleinreparaturen am Haus.'
   },
   {
     title: 'Gartenpflege',
     tag: '03',
     image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80',
-    short: 'Rasen · Hecke · Baumschnitt',
+    alt: 'Gartenpflege Rasenmähen und Heckenschnitt',
+    short: 'Rasen · Hecke · Baumschnitt. Rasenmähen, Heckenschnitt, Laubentfernung und Frühjahrsreinigung – Ihr Garten ist bei uns in guten Händen.',
     details: 'Rasenmähen, Hecken schneiden, Unkraut jäten oder die Vorbereitung für Sommer/Winter: Wir nehmen Ihnen die schwere Gartenarbeit ab.'
   },
   {
     title: 'Winterdienst',
     tag: '04',
     image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?auto=format&fit=crop&w=800&q=80',
-    short: 'Räumpflicht · Streuen · 24/7',
+    alt: 'Winterdienst Räumen und Streuen Lauf an der Pegnitz',
+    short: 'Räumpflicht · Streuen · 24/7. Wir übernehmen Ihre Räumpflicht – Schneeräumen und Streuen für sichere Wege, auch an Wochenenden und Feiertagen.',
     details: 'Früh morgens, wenn Sie noch schlafen, räumen wir bereits den Schnee. Sichere Gehwege und Zufahrten – wir übernehmen die Räum- und Streupflicht.'
   },
 ];
@@ -48,7 +52,7 @@ export default function ServicesGrid() {
           {services.map((s, i) => (
             <div key={i} className={`${styles.card} reveal reveal-delay-${i + 1}`} onClick={() => setModal(i)}>
               <div className={styles.imgWrap}>
-                <img src={s.image} alt={s.title} />
+                <img src={s.image} alt={s.alt} />
                 <div className={styles.imgOverlay}>
                   <span className={styles.tag}>{s.tag}</span>
                 </div>

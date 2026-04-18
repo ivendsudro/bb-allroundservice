@@ -37,7 +37,7 @@ export default function Gallery() {
       area: 'Bürogebäude · Lauf a.d. Pegnitz',
       imageBefore: '',
       imageAfter: '',
-      comment: 'Sehr starke Verschmutzung im Eingangsbereich komplett rückstandslos entfernt. Der Kunde war begeistert!'
+      comment: 'Eingangsbereich eines Bürogebäudes nach starker Verschmutzung – vollständig gereinigt und übergeben.'
     },
   ];
 
@@ -63,10 +63,7 @@ export default function Gallery() {
                   />
                 ) : (
                   <div className={styles.placeholder}>
-                    <div className={styles.phInner}>
-                      <span className={styles.phIcon}>↔️</span>
-                      <span className={styles.phText}>Vorher/Nachher Bilder hier eintragen in code</span>
-                    </div>
+                    {/* Leeres Div wie gewünscht */}
                   </div>
                 )}
               </div>

@@ -114,6 +114,7 @@ export default function ContactFooter() {
             <span>© {new Date().getFullYear()}</span>
           </div>
           <p className={styles.bottomAreas}>
+            <strong>B&B Allroundservice · Simmelsdorf · 91245 Bayern</strong><br />
             Lauf a.d. Pegnitz · Nürnberg · Röthenbach · Schnaittach · Hersbruck · Schwaig · Simmelsdorf
           </p>
           <div className={styles.bottomLinks}>

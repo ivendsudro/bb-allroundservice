@@ -52,12 +52,12 @@ export default function BeforeAfterSlider({ before, after, alt }: Props) {
       }}
     >
       {/* Das "Nachher"-Bild liegt unten (wird rechts sichtbar) */}
-      <img src={after} alt={`${alt} Nachher`} className={styles.image} draggable="false" />
+      <img src={after} alt={`Nachher ${alt}`} className={styles.image} draggable="false" />
 
       {/* Das "Vorher"-Bild liegt oben (wird durch clip-path beschnitten) */}
       <img
         src={before}
-        alt={`${alt} Vorher`}
+        alt={`Vorher ${alt}`}
         className={`${styles.image} ${styles.imageBefore}`}
         style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
         draggable="false"

@@ -11,33 +11,33 @@ export default function Gallery() {
    * ACHTUNG: Wenn du keine Bilder einträgst (beide leer ''), wird ein Platzhalter angezeigt.
    */
   const items = [
-    { 
-      label: 'Gebäudereinigung', 
+    {
+      label: 'Heckenschnitt',
+      area: 'Privatgarten · Lauf a.d. Pegnitz',
+      imageBefore: '/heckenschnitt-vorher.jpg',
+      imageAfter: '/heckenschnitt-nachher.jpg',
+      comment: 'Präziser Formschnitt einer Thuja-Hecke. Alle Schnittreste wurden fachgerecht entsorgt.'
+    },
+    {
+      label: 'Laubentfernung',
+      area: 'Gewerbefläche · Happurg',
+      imageBefore: '/laubentfernung-vorher.jpg',
+      imageAfter: '/laubentfernung-nachher.jpg',
+      comment: 'Gründliche Reinigung einer großen Pflasterfläche von Herbstlaub für maximale Sicherheit und Sauberkeit.'
+    },
+    {
+      label: 'Entrümpelung',
+      area: 'Wohnungsräumung · Kirchröttenbach',
+      imageBefore: '/entruempelung-vorher.jpg',
+      imageAfter: '/entruempelung-nachher.jpg',
+      comment: 'Entrümpelung einer kompletten Wohnung. Besenrein übergeben.'
+    },
+    {
+      label: 'Gebäudereinigung',
       area: 'Bürogebäude · Lauf a.d. Pegnitz',
-      imageBefore: '', // z.B. '/eingang-vorher.jpg'
-      imageAfter: '',  // z.B. '/eingang-nachher.jpg'
+      imageBefore: '',
+      imageAfter: '',
       comment: 'Sehr starke Verschmutzung im Eingangsbereich komplett rückstandslos entfernt. Der Kunde war begeistert!'
-    },
-    { 
-      label: 'Gartenarbeit', 
-      area: 'Privatgarten · Simmelsdorf',
-      imageBefore: '', 
-      imageAfter: '', 
-      comment: 'Frühjahrsschnitt der Hecke und komplette Rasensanierung durchgeführt. 4 Wagenladungen Grünschnitt entsorgt.'
-    },
-    { 
-      label: 'Entrümpelung', 
-      area: 'Kellerräumung · Nürnberg',
-      imageBefore: '/entruempelung-nachher.jpg', 
-      imageAfter: '/entruempelung-vorher.jpg', 
-      comment: 'Einen 60qm großen Keller innerhalb von 6 Stunden besenrein übergeben. Fairer Festpreis!'
-    },
-    { 
-      label: 'Reparaturen', 
-      area: 'Mehrfamilienhaus · Röthenbach',
-      imageBefore: '', 
-      imageAfter: '', 
-      comment: 'Wände ausgebessert und neu gestrichen, sowie Scharniere der Brandschutztüren repariert.'
     },
   ];
 
@@ -52,14 +52,14 @@ export default function Gallery() {
         <div className={styles.grid}>
           {items.map((item, i) => (
             <div key={i} className={`${styles.card} reveal reveal-delay-${i + 1}`}>
-              
+
               {/* Image Area - Either Slider or Placeholder */}
               <div className={styles.imageWrap}>
                 {item.imageBefore && item.imageAfter ? (
-                  <BeforeAfterSlider 
-                    before={item.imageBefore} 
-                    after={item.imageAfter} 
-                    alt={item.label} 
+                  <BeforeAfterSlider
+                    before={item.imageBefore}
+                    after={item.imageAfter}
+                    alt={item.label}
                   />
                 ) : (
                   <div className={styles.placeholder}>
@@ -80,7 +80,7 @@ export default function Gallery() {
                   </div>
                   <span className={styles.arrow}>↗</span>
                 </div>
-                
+
                 {/* Comment Section */}
                 <div className={styles.commentBox}>
                   <span className={styles.commentLabel}>Unser Kommentar:</span>

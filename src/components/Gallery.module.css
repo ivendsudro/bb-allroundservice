@@ -143,3 +143,149 @@
 @media (max-width: 768px) {
   .grid { grid-template-columns: 1fr; }
 }
+
+/* Edit UI & Modal */
+.imageWrap {
+  position: relative;
+}
+
+.editBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--c-charcoal);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.editBtn:hover {
+  transform: scale(1.1) rotate(90deg);
+  background: var(--c-blue);
+  color: var(--c-white);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background: var(--c-white);
+  width: 100%;
+  max-width: 400px;
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal h3 {
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--c-black);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-family: var(--f-small);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--c-silver);
+  margin-bottom: 0.5rem;
+}
+
+.formGroup input[type="password"],
+.formGroup input[type="file"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--c-light);
+  font-family: var(--f-body);
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--c-blue);
+}
+
+.modalActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.modalActions button {
+  padding: 1rem;
+  border-radius: 12px;
+  font-family: var(--f-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modalActions button:first-child {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: var(--c-silver);
+}
+
+.modalActions button:first-child:hover {
+  background: rgba(0,0,0,0.02);
+  color: var(--c-charcoal);
+}
+
+.submitBtn {
+  background: var(--c-blue);
+  border: none;
+  color: var(--c-white);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.3);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

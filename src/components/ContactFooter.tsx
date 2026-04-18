@@ -56,18 +56,31 @@ export default function ContactFooter() {
             <form action="https://formsubmit.co/bballrounddienst@gmail.com" method="POST">
               <input type="hidden" name="_subject" value="Neue Anfrage über B&B Website!" />
               <input type="hidden" name="_template" value="table" />
+              
               <div className={styles.formRow}>
                 <div className={styles.field}>
-                  <label>Name</label>
+                  <label>Name*</label>
                   <input type="text" name="Name" placeholder="Ihr Name" required />
                 </div>
                 <div className={styles.field}>
-                  <label>Telefon</label>
+                  <label>Telefon*</label>
                   <input type="tel" name="Telefon" placeholder="0176..." required />
                 </div>
               </div>
+
+              <div className={styles.formRow}>
+                <div className={styles.field}>
+                  <label>Firma (Optional)</label>
+                  <input type="text" name="Firma" placeholder="Firmenname" />
+                </div>
+                <div className={styles.field}>
+                  <label>E-Mail (Optional)</label>
+                  <input type="email" name="Email" placeholder="beispiel@mail.de" />
+                </div>
+              </div>
+
               <div className={styles.field}>
-                <label>Leistung</label>
+                <label>Leistung*</label>
                 <select name="Leistung" required defaultValue="">
                   <option value="" disabled>Bitte wählen...</option>
                   <option value="reinigung">Gebäudereinigung</option>
@@ -79,10 +92,12 @@ export default function ContactFooter() {
                   <option value="sonstiges">Sonstiges</option>
                 </select>
               </div>
+
               <div className={styles.field}>
                 <label>Nachricht</label>
                 <textarea name="Nachricht" placeholder="Beschreiben Sie kurz Ihr Anliegen..." rows={3}></textarea>
               </div>
+              
               <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
                 Anfrage absenden →
               </button>

@@ -11,20 +11,20 @@ export default function Reviews() {
    */
   const testimonials = [
     {
-      customer: "Max Mustermann",
-      role: "Hausverwaltung Nürnberg",
+      customer: "Herr Günzel",
+      role: "Privatkunde",
       text: "Ein extrem zuverlässiger Partner für unsere Immobilien. B&B Allroundservice arbeitet schnell, sauber und immer transparent. Absolut empfehlenswert!",
       stars: 5,
     },
     {
-      customer: "Familie Schmidt",
-      role: "Privatkunden aus Röthenbach",
+      customer: "Hausverwaltung Ostara",
+      role: "Hausverwaltung aus Schnaittach",
       text: "Der Garten sah nach dem Winter fürchterlich aus. Das Team hat innerhalb von zwei Tagen alles perfekt aufgeräumt und den Rasen saniert. Top!",
       stars: 5,
     },
     {
-      customer: "Anna Keller",
-      role: "Lauf an der Pegnitz",
+      customer: "Herr x",
+      role: "Privatkunde Lauf an der Pegnitz",
       text: "Sehr netter Kontakt. Die Fensterreinigung in unserem Bürogebäude wird immer pünktlich und super gründlich erledigt.",
       stars: 5,
     },

@@ -13,7 +13,7 @@ export default function Reviews() {
     {
       customer: "Herr Günzel",
       role: "Privatkunde",
-      text: "Ein extrem zuverlässiger Partner für unsere Immobilien. B&B Allroundservice arbeitet schnell, sauber und immer transparent. Absolut empfehlenswert!",
+      text: "Ein extrem zuverlässiger Partner für unsere Immobilien. B&B Service arbeitet schnell, sauber und immer transparent. Absolut empfehlenswert!",
       stars: 5,
     },
     {

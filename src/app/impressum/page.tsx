@@ -4,8 +4,8 @@ import ContactFooter from '@/components/ContactFooter';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Impressum | B&B Allroundservice',
-  description: 'Impressum und rechtliche Angaben für B&B Allroundservice.',
+  title: 'Impressum | B&B Service',
+  description: 'Impressum und rechtliche Angaben für B&B Service.',
 };
 
 export default function Impressum() {
@@ -22,7 +22,7 @@ export default function Impressum() {
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
               Behit Berisa<br />
-              B&B Allroundservice<br />
+              B&B Service<br />
               Bühler Straße 10<br />
               91245 Simmelsdorf
             </p>

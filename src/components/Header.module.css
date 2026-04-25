@@ -17,16 +17,9 @@
 /* Brand */
 .brand { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; }
 
-.mark {
-  font-family: var(--f-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--c-white);
-  background: var(--c-blue);
-  padding: 0.375rem 0.625rem;
-  border-radius: 8px;
-  letter-spacing: -0.02em;
-  line-height: 1;
+.logoImg {
+  height: 48px;
+  width: auto;
 }
 
 .brandName {

@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Gebäudereinigung Lauf an der Pegnitz | B&B Allroundservice",
+  title: "Gebäudereinigung Lauf an der Pegnitz | B&B Service",
   description: "Professionelle Gebäudereinigung, Gartenpflege & Reparaturen in Lauf a.d. Pegnitz. Familiengeführt, fair & zuverlässig. Jetzt kostenlos anfragen – 0176 2470 2350.",
   keywords: [
     "Gebäudereinigung", "Lauf an der Pegnitz", "Nürnberg", "Reparatur",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Hersbruck", "Winterdienst", "Handwerker", "Entrümpelung"
   ],
   openGraph: {
-    title: "B&B Allroundservice - Alles aus einer Hand",
+    title: "B&B Service - Alles aus einer Hand",
     description: "Gebäudereinigung und Hausmeisterservice im gesamten Nürnberger Land.",
     locale: "de_DE",
     type: "website",
@@ -50,7 +50,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "B&B Allroundservice",
+              "name": "B&B Service",
               "description": "Gebäudereinigung, Gartenpflege, Reparaturen und Winterdienst im Nürnberger Land",
               "telephone": "+4917624702350",
               "email": "bballrounddienst@gmail.com",

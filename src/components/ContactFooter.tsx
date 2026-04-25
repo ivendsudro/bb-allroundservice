@@ -56,7 +56,7 @@ export default function ContactFooter() {
             <form action="https://formsubmit.co/bballrounddienst@gmail.com" method="POST">
               <input type="hidden" name="_subject" value="Neue Anfrage über B&B Website!" />
               <input type="hidden" name="_template" value="table" />
-              
+
               <div className={styles.formRow}>
                 <div className={styles.field}>
                   <label>Name*</label>
@@ -97,7 +97,7 @@ export default function ContactFooter() {
                 <label>Nachricht</label>
                 <textarea name="Nachricht" placeholder="Beschreiben Sie kurz Ihr Anliegen..." rows={3}></textarea>
               </div>
-              
+
               <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
                 Anfrage absenden →
               </button>
@@ -110,11 +110,11 @@ export default function ContactFooter() {
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
           <div className={styles.bottomBrand}>
-            <strong>B&B Allroundservice</strong>
+            <strong>B&B Service</strong>
             <span>© {new Date().getFullYear()}</span>
           </div>
           <p className={styles.bottomAreas}>
-            <strong>B&B Allroundservice · Simmelsdorf · 91245 Bayern</strong><br />
+            <strong>B&B Service · 91245 Simmelsdorf</strong><br />
             Lauf a.d. Pegnitz · Nürnberg · Röthenbach · Schnaittach · Hersbruck · Schwaig · Simmelsdorf
           </p>
           <div className={styles.bottomLinks}>

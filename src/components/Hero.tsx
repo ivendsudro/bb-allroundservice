@@ -11,11 +11,11 @@ export default function Hero() {
   return (
     <section className={styles.hero} id="hero">
       <div className={styles.bg}>
-        {/* HIER DAS HERO-BILD ÄNDERN: Einfach den Link bei 'src' austauschen. 
-            Empfehlung: Bilder im Frutiger Aero / Sauberkeits-Stil verwenden */}
+        {/* HIER DAS HERO-BILD ÄNDERN: Einfach den Link bei 'src' austauschen. */}
         <img
-          src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=80"
-          alt="Professionelle Gebäudereinigung in Lauf an der Pegnitz"
+          src="/logo.png"
+          alt="B&B Service - Bärenstarke Betreuung rund um Haus und Garten"
+          style={{ objectFit: 'contain', padding: '2rem' }}
         />
         <div className={styles.overlay} />
       </div>
@@ -32,8 +32,8 @@ export default function Hero() {
         </h1>
 
         <p className={styles.sub}>
-          Professionelle Gebäudereinigung & Hausmeisterservice in Lauf a.d. Pegnitz.<br />
-          <strong>Ihr Partner für Gartenpflege und Reparaturen im Nürnberger Land.</strong>
+          <strong>Bärenstarke Betreuung rund um Haus und Garten.</strong><br />
+          Professionelle Gebäudereinigung, Gartenpflege & Reparaturen im Nürnberger Land.
         </p>
 
         <div className={styles.actions}>

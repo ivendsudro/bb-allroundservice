@@ -2,37 +2,79 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding-bottom: 5rem;
+  padding-top: 6rem;
   overflow: hidden;
+  background-color: var(--c-charcoal);
 }
 
 .bg {
   position: absolute;
   inset: 0;
-}
-
-.bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
+  z-index: 1;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 11, 0.3) 0%,
-    rgba(10, 10, 11, 0.5) 40%,
-    rgba(10, 10, 11, 0.85) 100%
-  );
+  background: radial-gradient(circle at right center, rgba(16, 185, 129, 0.08) 0%, rgba(10, 10, 11, 0.9) 60%, var(--c-black) 100%);
 }
 
 .content {
   position: relative;
   z-index: 2;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: fadeUp 1s var(--ease-out) 0.6s both;
+}
+
+.imageContent::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  background: var(--c-mint-glow);
+  filter: blur(80px);
+  z-index: -1;
+  border-radius: 50%;
+  animation: pulseBg 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseBg {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  transition: transform 0.5s var(--ease-out);
+}
+
+.heroImage:hover {
+  transform: translateY(-10px) scale(1.03);
 }
 
 /* Eyebrow */
@@ -141,9 +183,19 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
-  .hero { align-items: center; padding-bottom: 3rem; padding-top: 6rem; }
+@media (max-width: 992px) {
+  .hero { align-items: center; padding-top: 8rem; }
+  .grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+  .textContent { align-items: center; }
+  .sub { margin-left: auto; margin-right: auto; max-width: 600px; }
+  .actions { justify-content: center; }
   .scrollHint { display: none; }
-  .actions { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding-bottom: 3rem; padding-top: 6rem; }
+  .scrollHint { display: none; }
+  .actions { flex-direction: column; width: 100%; }
   .actions .btn { width: 100%; justify-content: center; }
+  .heroImage { max-width: 320px; }
 }

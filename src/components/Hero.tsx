@@ -43,11 +43,38 @@ export default function Hero() {
           </div>
 
           <div className={styles.imageContent}>
-            <img
-              src="/hero-baer.png"
-              alt="B&B Service - Bärenstarke Betreuung rund um Haus und Garten"
-              className={styles.heroImage}
-            />
+            <div className={styles.imageWrapper}>
+              {/* Central Glowing Orb */}
+              <div className={styles.centralGlow} />
+
+              {/* Main Bear Image */}
+              <img
+                src="/hero-baer.png-removebg-preview.png"
+                alt="B&B Service - Bärenstarke Betreuung rund um Haus und Garten"
+                className={styles.heroImage}
+              />
+
+              {/* Floating Service Badges */}
+              <div className={`${styles.floatingBadge} ${styles.badge1}`}>
+                <span className={styles.badgeIcon}>✨</span>
+                <span>Gebäudereinigung</span>
+              </div>
+              
+              <div className={`${styles.floatingBadge} ${styles.badge2}`}>
+                <span className={styles.badgeIcon}>📦</span>
+                <span>Entrümpelung</span>
+              </div>
+
+              <div className={`${styles.floatingBadge} ${styles.badge3}`}>
+                <span className={styles.badgeIcon}>🌿</span>
+                <span>Gartenpflege</span>
+              </div>
+
+              <div className={`${styles.floatingBadge} ${styles.badge4}`}>
+                <span className={styles.badgeIcon}>🛠️</span>
+                <span>Hausmeisterservice</span>
+              </div>
+            </div>
           </div>
         </div>
 

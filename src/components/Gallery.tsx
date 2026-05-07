@@ -17,6 +17,13 @@ export default function Gallery() {
       imageBefore: '/entruempelung-vorher.jpg',
       imageAfter: '/entruempelung-nachher.jpg',
       comment: 'Entrümpelung einer kompletten Wohnung. Besenrein übergeben.'
+    },
+    {
+      label: 'Laubentfernung',
+      area: 'Gewerbefläche · Happurg',
+      imageBefore: '/laubentfernung-vorher.jpg',
+      imageAfter: '/laubentfernung-nachher.jpg',
+      comment: 'Gründliche Reinigung einer großen Pflasterfläche von Herbstlaub für maximale Sicherheit und Sauberkeit.'
     }
   ];
 

@@ -16,12 +16,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <PainPoints />
+        {/* <PainPoints /> */}
         <Marquee />
         <ServicesGrid />
         <Gallery />
         <WhyUs />
-        <Reviews />
+        {/* <Reviews /> */}
         <ContactFooter />
       </main>
     </>

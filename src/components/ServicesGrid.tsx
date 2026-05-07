@@ -81,7 +81,8 @@ export default function ServicesGrid() {
           <span className="badge badge-blue">Leistungen</span>
           <h2>Was wir<br /><em>für Sie tun.</em></h2>
           <p className={styles.subtitle}>
-            Fünf Kernleistungen, ein Ansprechpartner. Wir kümmern uns um alles rund um Ihre Immobilie&nbsp;–&nbsp;zuverlässig und zu fairen Preisen.
+            Fünf Kernleistungen, ein Ansprechpartner. Wir kümmern uns um alles rund um Ihre Immobilie&nbsp;–&nbsp;zuverlässig und zu fairen Preisen.<br/><br/>
+            <strong>Gut zu wissen:</strong> Als echte Allround-Handwerker können wir auf Anfrage viele weitere Arbeiten übernehmen, die hier nicht explizit aufgelistet sind. Sprechen Sie uns einfach auf Ihr individuelles Projekt an!
           </p>
         </div>
 
@@ -97,9 +98,9 @@ export default function ServicesGrid() {
               <span className={styles.featuredTag}>{featuredService.tag}</span>
               <h3>{featuredService.title}</h3>
               <p className={styles.featuredDesc}>{featuredService.desc}</p>
-              <button className={styles.featuredBtn}>
+              <span className={styles.featuredBtn}>
                 Mehr erfahren <span>→</span>
-              </button>
+              </span>
             </div>
             <div className={styles.featuredImgWrap}>
               <Image

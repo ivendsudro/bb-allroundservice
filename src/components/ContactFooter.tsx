@@ -21,6 +21,12 @@ export default function ContactFooter() {
           <div className="reveal">
             <span className="badge badge-blue">Kontakt</span>
             <h2 className={styles.contactHeading}>Sprechen wir<br />darüber.</h2>
+            
+            <img 
+              src="/baer-kontakt.png" 
+              alt="B&B Kontakt Bär" 
+              style={{ width: '100%', maxWidth: '240px', margin: '1rem 0 2rem 0', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.15))' }} 
+            />
 
             <div className={styles.links}>
               <a href="tel:+4917624702350" className={styles.linkCard}>

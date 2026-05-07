@@ -44,7 +44,7 @@ export default function Hero() {
 
           <div className={styles.imageContent}>
             <img
-              src="/logo.png"
+              src="/hero-baer.png"
               alt="B&B Service - Bärenstarke Betreuung rund um Haus und Garten"
               className={styles.heroImage}
             />

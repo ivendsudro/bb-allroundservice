@@ -12,33 +12,12 @@ export default function Gallery() {
    */
   const items = [
     {
-      label: 'Heckenschnitt',
-      area: 'Privatgarten · Lauf a.d. Pegnitz',
-      imageBefore: '/heckenschnitt-vorher.jpg',
-      imageAfter: '/heckenschnitt-nachher.jpg',
-      comment: 'Präziser Formschnitt einer Thuja-Hecke. Alle Schnittreste wurden fachgerecht entsorgt.'
-    },
-    {
-      label: 'Laubentfernung',
-      area: 'Gewerbefläche · Happurg',
-      imageBefore: '/laubentfernung-vorher.jpg',
-      imageAfter: '/laubentfernung-nachher.jpg',
-      comment: 'Gründliche Reinigung einer großen Pflasterfläche von Herbstlaub für maximale Sicherheit und Sauberkeit.'
-    },
-    {
       label: 'Entrümpelung',
       area: 'Wohnungsräumung · Kirchröttenbach',
       imageBefore: '/entruempelung-vorher.jpg',
       imageAfter: '/entruempelung-nachher.jpg',
       comment: 'Entrümpelung einer kompletten Wohnung. Besenrein übergeben.'
-    },
-    {
-      label: 'Gebäudereinigung',
-      area: 'Bürogebäude · Lauf a.d. Pegnitz',
-      imageBefore: '',
-      imageAfter: '',
-      comment: 'Eingangsbereich eines Bürogebäudes nach starker Verschmutzung – vollständig gereinigt und übergeben.'
-    },
+    }
   ];
 
   return (

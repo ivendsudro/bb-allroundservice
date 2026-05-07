@@ -22,7 +22,7 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.brand} onClick={() => go('hero')}>
-          <img src="/logo.png" alt="B&B Service Logo" className={styles.logoImg} />
+          <img src="/baer-logo.png" alt="B&B Service Logo" className={styles.logoImg} />
           <div className={styles.brandText}>
             <span className={styles.brandName}>B&B Service</span>
             <span className={styles.brandTag}>Nürnberger Land</span>

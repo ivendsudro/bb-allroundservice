@@ -32,7 +32,7 @@ export default function Impressum() {
             <h2>Kontakt</h2>
             <p>
               Telefon: <a href="tel:+4917624702350">0176 2470 2350</a><br />
-              E-Mail: <a href="mailto:bballrounddienst@gmail.com">bballrounddienst@gmail.com</a>
+              E-Mail: <a href="mailto:hallo@bb-allroundservice.de">hallo@bb-allroundservice.de</a>
             </p>
           </section>
 

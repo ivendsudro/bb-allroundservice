@@ -53,7 +53,7 @@ export default function RootLayout({
               "name": "B&B Service",
               "description": "Gebäudereinigung, Gartenpflege, Reparaturen und Winterdienst im Nürnberger Land",
               "telephone": "+4917624702350",
-              "email": "bballrounddienst@gmail.com",
+              "email": "hallo@bb-allroundservice.de",
               "url": "https://bballroundservice.vercel.app",
               "address": {
                 "@type": "PostalAddress",

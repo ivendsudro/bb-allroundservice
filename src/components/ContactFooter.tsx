@@ -39,11 +39,11 @@ export default function ContactFooter() {
                 </div>
                 <span className={styles.linkArrow}>→</span>
               </a>
-              <a href="mailto:bballrounddienst@gmail.com" className={styles.linkCard}>
+              <a href="mailto:hallo@bb-allroundservice.de" className={styles.linkCard}>
                 <span className={styles.linkIcon}>✉️</span>
                 <div>
                   <span className={styles.linkLabel}>E-Mail</span>
-                  <span className={styles.linkValue}>bballrounddienst@gmail.com</span>
+                  <span className={styles.linkValue}>hallo@bb-allroundservice.de</span>
                 </div>
                 <span className={styles.linkArrow}>→</span>
               </a>
@@ -67,7 +67,7 @@ export default function ContactFooter() {
           {/* Right: Form */}
           <div className={`${styles.formWrap} reveal reveal-delay-2`}>
             <h3>Anfrage senden</h3>
-            <form action="https://formsubmit.co/bballrounddienst@gmail.com" method="POST">
+            <form action="https://formsubmit.co/hallo@bb-allroundservice.de" method="POST">
               <input type="hidden" name="_subject" value="Neue Anfrage über B&B Website!" />
               <input type="hidden" name="_template" value="table" />
 
